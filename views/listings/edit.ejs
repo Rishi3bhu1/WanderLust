@@ -1,0 +1,48 @@
+<%-layout("/layouts/boilerplate.ejs") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h3>EDIT LISTING</h3>
+        <form method="post" action="/listings/<%=listings._id%>?_method=PUT " novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-class">Title</label>
+            <input name="listings[title]" value="<%=listings.title%>" type="text" class="form-control" required>
+            <div class="invalid-feedback">Enter Valid Title</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-class">Description</label>
+            <input name="listings[description]" value="<%=listings.description%>" class="form-control" required>
+            <div class="invalid-feedback">Enter Valid Description</div>
+        </div>
+        <div class="mb-3">
+            <P>Orignial listing image</P><br>
+            <img src="<%=originalImageUrl%>">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-class">Image</label>
+            <input name="listings[image]" value="<%=listings.image%>" type="file" class="form-control" required>
+            <div class="invalid-feedback">Enter Image URL</div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-4">
+                <label for="price" class="form-class">Price</label>
+                <input name="listings[price]" value="<%=listings.price%>" type="number" class="form-control" required>
+                <div class="invalid-feedback">Enter Valid price</div>
+            </div>
+            <div class="mb-3 col-8">
+                <label for="country" class="form-class">Country</label>
+                <input name="listings[country]" value="<%=listings.country%>" type="text" class="form-control" required>
+                <div class="invalid-feedback">Enter Country Name</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="Location" class="form-class">Location</label>
+            <input name="listings[location]" value="<%=listings.location%>" type="text" class="form-control" required>
+            <div class="invalid-feedback">Enter Location</div>
+        </div>
+        <br>
+        <div>
+            <button class="btn-edit btn-dark  ">Edit</button>
+        </div>    
+    </div>
+</div>
+<script src="/js/script.js"></script>
