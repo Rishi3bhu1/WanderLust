@@ -31,7 +31,7 @@ module.exports.add = async(req,res)=>{
     res.redirect("/listings");
 }
 
-module.exports.show =async(req,res)=>{
+module.exports.show = async(req,res)=>{
     let {id}= req.params;
     const listings = await Listings.findById(id).
     populate({
